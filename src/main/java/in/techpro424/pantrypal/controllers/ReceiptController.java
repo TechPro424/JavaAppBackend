@@ -1,7 +1,6 @@
 package in.techpro424.pantrypal.controllers;
 
 import in.techpro424.pantrypal.models.Ingredient;
-import in.techpro424.pantrypal.services.InventoryService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;

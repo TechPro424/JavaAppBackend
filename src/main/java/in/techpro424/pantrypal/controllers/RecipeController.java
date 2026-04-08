@@ -1,14 +1,11 @@
 package in.techpro424.pantrypal.controllers;
 
-import in.techpro424.pantrypal.models.Ingredient;
-import in.techpro424.pantrypal.services.InventoryService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/recipes")
