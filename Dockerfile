@@ -3,11 +3,12 @@ FROM eclipse-temurin:25-jdk-alpine AS build
 WORKDIR /app
 COPY . .
 
-# Grant execution rights to the wrapper script
+# Fix Windows line endings (just in case) and grant execution rights
+RUN sed -i 's/\r$//' gradlew
 RUN chmod +x ./gradlew
 
-# Build the project (The wrapper will automatically download Gradle 9.3.0)
-RUN ./gradlew build -x test
+# Build the project WITHOUT the daemon to prevent memory crashes
+RUN ./gradlew build -x test --no-daemon
 
 # Stage 2: Run the app using the ultra-lightweight Alpine JRE
 FROM eclipse-temurin:25-jre-alpine
