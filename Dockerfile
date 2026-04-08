@@ -8,7 +8,7 @@ RUN sed -i 's/\r$//' gradlew
 RUN chmod +x ./gradlew
 
 # Build the project WITHOUT the daemon to prevent memory crashes
-RUN ./gradlew build -x test --no-daemon
+RUN ./gradlew build -x test --no-daemon --info --stacktrace
 
 # Stage 2: Run the app using the ultra-lightweight Alpine JRE
 FROM eclipse-temurin:25-jre-alpine
